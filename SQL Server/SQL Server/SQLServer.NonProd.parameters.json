@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "serverName": {
+      "value": "mydevelopmentsqlserver"
+    },
+    "administratorLogin": {
+      "value": "sqlgod"
+    },
+    "administratorLoginPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "ID Link of Development Key Vault Secret"
+        },
+        "secretName": "sqlgod"
+      }
+    },
+    //Tags
+    "technicalowner_tag": {
+      "value": "dillon@bowside.co.za"
+    }
+  }
+}
